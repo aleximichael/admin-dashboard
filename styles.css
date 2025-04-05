@@ -23,35 +23,48 @@ img {
 /* General Layout */
 
 :root {
-    --colour-primary: rgb(5, 122, 248);
-    --colour-secondary: orange;
-    --colour-black: black;
-    --colour-white: white;
-    --colour-bg: rgb(236, 236, 236);
-    --colour-bg-dark: rgb(206, 203, 203);
+    --colour-primary: #5C415D;
+    --colour-secondary: #f5a613;
+    --colour-black: #080808;
+    --colour-white: #f4f5f1;
+    --colour-bg: #e5e1e5;
+    --colour-bg-dark: #d48b03;
+    --font-xl: 2rem;
+    --font-lg: 1.75rem;
+    --font-med: 1.34rem;
+    --font-sm: 1.15rem;
+    --font-xs: 1rem;
+    --font-normal: 400;
+    --font-bold: 700;
+    --sans-serif: "Open Sans", sans-serif;
 }
 
 body {
     -webkit-font-smoothing: antialiased;
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 1fr 4.5fr;
+    font-family: 'Amaranth', serif;
 }
 
 h1 {
-    font-size: 1.5rem;
+    font-size: var(--font-xl);
 }
 
 h2 {
-    font-size: 1.25rem;
+    font-size: var(--font-lg);
 }
 
-h3, p {
-    font-size: 1rem;
+h3 {
+    font-size: var(--font-med);
 }
 
 h4 {
-    font-size: 1rem;
+    font-size: var(--font-sm);
     margin-bottom: 0.25rem;
+}
+
+p {
+    font-size: var(--font-xs);
 }
 
 /* Header */
@@ -61,8 +74,8 @@ h4 {
     color: var(--colour-black);
     display: grid;
     grid-template-columns: 3fr 2fr;
-    padding: 1rem;
-    gap: 1rem;
+    padding: 2rem 1.5rem;
+    gap: 2rem;
 }
 
 .header > * {
@@ -78,12 +91,7 @@ h4 {
     width: 50vw;
     background-color: var(--colour-bg);
     border-radius: 0.75rem;
-    height: 75%;
-}
-
-.actions {
-    justify-content: end;
-    align-items: center;
+    height: 100%;
 }
 
 .icons {
@@ -92,16 +100,27 @@ h4 {
 }
 
 .user-name {
-    font-weight: 600;
+    font-weight: var(--font-bold);
+    font-size: var(--font-med);
     align-self: center;
 }
 
-.header button {
-    background-color: var(--colour-primary);
-    color: var(--colour-white);
-    border: none;
-    padding: 0.25rem 1.5rem;
-    border-radius: 1rem;
+.actions {
+    justify-content: end;
+    align-items: center;
+}
+
+.welcome {
+    gap: 1rem;
+}
+
+.welcome-text {
+    font-size: var(--font-med);
+}
+
+.user-intro {
+    font-size: var(--font-lg);
+    font-weight: var(--font-bold);
 }
 
 .button-group {
@@ -109,13 +128,13 @@ h4 {
     gap: 1rem;
 }
 
-.welcome {
-    gap: 1rem;
-}
-
-.user-intro {
-    font-size: 1.25rem;
-    font-weight: 600;
+.action-button {
+    background-color: var(--colour-primary);
+    color: var(--colour-white);
+    border: none;
+    padding: 0.25rem 1.5rem;
+    border-radius: 1rem;
+    font-size: var(--font-med);
 }
 
 /* Sidebar */
@@ -133,12 +152,16 @@ h4 {
     align-items: center;
 }
 
-.sidebar-title {
-    margin-bottom: 4rem;
+.nav-item:not(.last-item) {
+    margin-bottom: 0.5rem;
+}
+
+.nav-text {
+    font-size: var(--font-med);
 }
 
 .sidebar-nav-top {
-    margin-bottom: 2rem;
+    margin: 4rem 0;
 }
 
 /* Content */
@@ -146,14 +169,20 @@ h4 {
 .content {
     background-color: var(--colour-bg);
     color: var(--colour-black);
-    padding: 1rem 1rem 2rem;
+    padding: 2rem 2rem 3rem;
     display: grid;
     grid-template-columns: 3fr 1fr;
-    gap: 1rem;
+    gap: 2rem;
+}
+
+.project-text,
+.ann-text, 
+.trending-project {
+    font-family: var(--sans-serif);
 }
 
 .grid-section-title {
-    margin-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .project-item,
@@ -162,7 +191,7 @@ h4 {
     background-color: var(--colour-white);
     padding: 1.5rem;
     border-radius: 0.5rem;
-    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 0 2px var(--colour-primary), 8px 8px 0 0 var(--colour-primary);
 }
 
 .projects {
@@ -175,13 +204,12 @@ h4 {
     flex: 1;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+    gap: 2rem;
 }
 
 .project-item {
     display: flex;
     flex-direction: column;
-    border-left: 0.5rem solid var(--colour-secondary);
 }
 
 .project-title {
@@ -224,7 +252,7 @@ h4 {
 
 .user-handle {
     text-transform: lowercase;
-    font-weight: 600;
+    font-weight: var(--font-bold);
 }
 
 .user-handle::before {

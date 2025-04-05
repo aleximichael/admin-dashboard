@@ -6,20 +6,9 @@
     box-sizing: border-box;
 }
 
-body {
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-}
-
 button {
     font: inherit;
-    display: block;
 } 
-
-img {
-    display: block;
-    max-width: 100%;
-}
 
 /* Visualize Layout (Placeholders) */
 
@@ -31,15 +20,67 @@ img {
     width: 30px;
 }
 
+/* General Layout */
 
+body {
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
 
-/* Apply Grid Properties until you have the basic layout built */
+/* Header */
 
-/* Sidebar: Use Grids to layout navigation and branching sections */
+.header {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+}
 
-/* Header: Use Grids to lay out the serach bar, user info, and buttons */
+.header > * {
+    display: flex;
+}
 
-/* Content: Use Grids to layout projects, announcements, and trending items */
+/* Sidebar */
 
-/* Once the Layout is completed, style your own design */
+.sidebar {
+    grid-row: 1 / 3;
+}
 
+.nav-item {
+    display: flex;
+    gap: 1rem;
+}
+
+.sidebar-title {
+    margin-bottom: 4rem;
+}
+
+.sidebar-nav-top {
+    margin-bottom: 2rem;
+}
+
+/* Content */
+
+.content {
+    display: grid;
+    grid-template-columns: 5fr 2fr;
+}
+
+.projects {
+    grid-row: 1 / 3;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.project-icons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.trending-user {
+    display: flex;
+    gap: 0.5rem;
+}

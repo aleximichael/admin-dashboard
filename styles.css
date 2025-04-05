@@ -1,0 +1,45 @@
+/* Default Styles */
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+
+button {
+    font: inherit;
+    display: block;
+} 
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* Visualize Layout (Placeholders) */
+
+body * {
+    border: 0.5px solid black;
+}
+
+img {
+    width: 30px;
+}
+
+
+
+/* Apply Grid Properties until you have the basic layout built */
+
+/* Sidebar: Use Grids to layout navigation and branching sections */
+
+/* Header: Use Grids to lay out the serach bar, user info, and buttons */
+
+/* Content: Use Grids to layout projects, announcements, and trending items */
+
+/* Once the Layout is completed, style your own design */
+

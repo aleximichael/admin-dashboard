@@ -10,16 +10,6 @@ input, button {
     font: inherit;
 } 
 
-/* Visualize Layout (Placeholders) */
-
-body * {
-    /* border: 0.5px solid black; */
-}
-
-img {
-    width: 30px;
-}
-
 /* General Layout */
 
 :root {
@@ -33,6 +23,10 @@ img {
     --white-filter: invert(99%) sepia(15%) saturate(272%) hue-rotate(38deg) brightness(102%) contrast(92%);
     --secondary-filter: invert(75%) sepia(61%) saturate(3133%) hue-rotate(357deg) brightness(98%) contrast(98%);
     --secondary-dark-filter: invert(54%) sepia(79%) saturate(3247%) hue-rotate(18deg) brightness(103%) contrast(98%);
+    --user-icon-filter0: invert(27%) sepia(82%) saturate(3410%) hue-rotate(2deg) brightness(104%) contrast(102%);
+    --user-icon-filter1: invert(28%) sepia(98%) saturate(1382%) hue-rotate(181deg) brightness(90%) contrast(101%);
+    --user-icon-filter2: invert(75%) sepia(8%) saturate(7227%) hue-rotate(28deg) brightness(94%) contrast(109%);
+    --user-icon-filter3: invert(18%) sepia(76%) saturate(5847%) hue-rotate(317deg) brightness(96%) contrast(104%);
     --primary-hover: #745775;
     --primary-active: #382739;
     --black-hover: #232323;
@@ -50,6 +44,7 @@ img {
 body {
     -webkit-font-smoothing: antialiased;
     font-family: 'Amaranth', serif;
+    display: flex;
 }
 
 h1 {
@@ -74,7 +69,7 @@ p {
 }
 
 .main-content {
-    margin-left: 275px;
+    margin-left: 270px;
 }
 
 a {
@@ -88,8 +83,9 @@ a {
     background-color: var(--colour-primary);
     color: var(--colour-white);
     height: 100%;
-    width: 275px;
+    width: 270px;
     position: fixed;
+    z-index: 1;
     top: 0;
     left: 0; 
     padding: 2rem 1.5rem;
@@ -157,7 +153,7 @@ a {
     color: var(--colour-black);
     display: grid;
     grid-template-columns: 3fr 2fr;
-    padding: 2rem 1.5rem;
+    padding: 2rem 2rem;
     gap: 2rem;
 }
 
@@ -170,8 +166,12 @@ a {
     gap: 1rem;
 }
 
+.alert-icon, .search-icon {
+    width: 30px;
+}
+
 .search-container {
-    width: 50vw;
+    width: 45vw;
     background-color: var(--colour-bg);
     border: none;
     border-radius: 0.5rem;
@@ -188,12 +188,16 @@ a {
 }
 
 .user-icon {
-    width: 10%;
+    width: 40px;
+}
+
+.welcome-pic {
+    width: 80px;
 }
 
 .trending-user > .user-icon {
     width: 30px;
-    height: 32px;
+    height: 30px;
 }
 
 .user-name {
@@ -320,6 +324,7 @@ a {
 
 .project-icons > img {
     filter: var(--primary-filter);
+    width: 30px;
 }
 
 .project-icons > img:hover {
@@ -328,6 +333,10 @@ a {
 
 .project-icons > img:active {
     filter: var(--secondary-dark-filter);
+}
+
+.project-item:has(img:active) {
+    --box-shadow-colour: var(--colour-secondary);
 }
 
 .ann-item:hover,
@@ -376,4 +385,33 @@ a {
 h2 a:hover {
     color: var(--colour-secondary);
     text-decoration: underline;
+}
+
+h2 a:active {
+    color: var(--colour-bg-dark);
+}
+
+.curr-user {
+    filter: var(--secondary-filter);
+}
+
+.user-1 {
+    filter: var(--user-icon-filter1);
+}
+
+.user-2 {
+    filter: var(--user-icon-filter2);
+}
+
+.user-3 {
+    filter: var(--user-icon-filter3);
+}
+
+.icons > p:hover {
+    color: var(--colour-secondary);
+    text-decoration: underline;
+}
+
+.icons > p:active {
+    color: var(--colour-bg-dark);
 }

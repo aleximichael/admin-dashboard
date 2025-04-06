@@ -13,7 +13,7 @@ input, button {
 /* Placeholder */
 
 body * {
-    border: 0.5px solid black;
+    /* border: 0.5px solid black; */
 }
 
 /* Global Variables */
@@ -54,20 +54,25 @@ body * {
     --font-amaranth: "Amaranth", serif;
     --font-open: "Open Sans", sans-serif;
 
-    --sidebar-width: 280px;
+    --sidebar-width: 18rem;
 
-    --icon-lg: 40px;
-    --icon-med: 30px;
+    --icon-xl: 4rem;
+    --icon-lg: 3rem;
+    --icon-med: 2rem;
 
     --gap-xl: 4rem;
     --gap-lg: 2rem;
     --gap-med: 1rem;
     --gap-sm: 0.5rem;
+
+    --radius-lg: 1.5rem;
+    --radius-med: 0.5rem;
 }
 
 /* Main Structure */
 
 body {
+    background-color: var(--colour-primary-bg);
     -webkit-font-smoothing: antialiased;
     font-family: var(--font-amaranth);
     display: flex;
@@ -106,6 +111,7 @@ body {
     display: flex;
     gap: var(--gap-med);
     margin-bottom: var(--gap-med);
+    align-items: center;
 }
 
 .sidebar-dashboard,
@@ -136,102 +142,72 @@ body {
 .header {
     background-color: var(--colour-white);
     color: var(--colour-black);
+
     display: grid;
     grid-template-columns: 3fr 2fr;
-    padding: 2rem 2rem;
-    gap: 2rem;
+
+    padding: var(--gap-lg);
+    gap: var(--gap-lg);
 }
 
-.header > * {
+.header > div {
     display: flex;
-}
-
-.search {
     align-items: center;
-    gap: 1rem;
+    gap: var(--gap-med);
 }
 
-.alert-icon, .search-icon {
-    width: 30px;
+.header-icon {
+    width: var(--icon-med);
 }
 
 .search-container {
-    width: 45vw;
+    flex: 1;
+    display: flex;
+}
+
+.search-bar {
+    flex: 1;
     background-color: var(--colour-primary-bg);
     border: none;
-    border-radius: 0.5rem;
-    padding: 0.5rem;
+    border-radius: var(--radius-med);
+    font-size: var(--font-xs);
+    padding: var(--gap-sm);
 }
 
-.search-container:focus {
-    outline: 2px solid var(--colour-secondary);
-}
-
-.icons {
+.profile, 
+.actions {
     justify-content: end;
-    gap: 1rem;
+}
+
+.profile-name {
+    font-weight: var(--font-bold);
+    font-size: var(--font-med);
 }
 
 .user-icon {
-    width: 40px;
+    filter: var(--secondary-filter);
 }
 
-.welcome-pic {
-    width: 80px;
-}
-
-.trending-user > .user-icon {
-    width: 30px;
-    height: 30px;
-}
-
-.user-name {
-    font-weight: var(--font-bold);
-    font-size: var(--font-med);
-    align-self: center;
-}
-
-.actions {
-    justify-content: end;
-    align-items: center;
-}
-
-.welcome {
-    gap: 1rem;
+.welcome-icon {
+    width: var(--icon-xl);
 }
 
 .welcome-text {
-    font-size: var(--font-med);
+    font-size: var(--font-sm);
 }
 
-.user-intro {
+.welcome-user {
     font-size: var(--font-lg);
     font-weight: var(--font-bold);
 }
 
-.button-group {
-    display: flex;
-    gap: 1rem;
-}
-
-.action-button {
+.action-btn {
     background-color: var(--colour-primary);
     color: var(--colour-white);
+    font-size: var(--font-sm);
     border: none;
-    padding: 0.25rem 1.5rem;
-    border-radius: 1rem;
-    font-size: var(--font-med);
-}
-
-.action-button:hover {
-    background-color: var(--colour-secondary);
-    color: var(--colour-black);
-    cursor: pointer;
-}
-
-.action-button:active {
-    background-color: var(--colour-secondary-dark);
-    color: var(--colour-black);
+    padding: var(--gap-sm) var(--gap-lg);
+    border-radius: var(--radius-lg);
 }
 
 /* Content */
@@ -358,6 +334,11 @@ body {
     gap: 0.5rem;
 }
 
+.trending-user > .user-icon {
+    width: 30px;
+    height: 30px;
+}
+
 .trending-user:not(:last-child) {
     margin-bottom: 1rem;
 }
@@ -425,4 +406,19 @@ h2 a:active {
 
 .nav-item:active .nav-icon {
     filter: var(--secondary-dark-filter);
+}
+
+.action-button:hover {
+    background-color: var(--colour-secondary);
+    color: var(--colour-black);
+    cursor: pointer;
+}
+
+.action-button:active {
+    background-color: var(--colour-secondary-dark);
+    color: var(--colour-black);
+}
+
+.search-container:focus {
+    outline: 2px solid var(--colour-secondary);
 }

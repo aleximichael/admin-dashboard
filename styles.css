@@ -10,19 +10,11 @@ input, button {
     font: inherit;
 } 
 
-/* Placeholder */
-
-body * {
-    border: 0.5px solid black;
-}
-
 /* Global Variables */
 
 :root {
     --colour-primary: #5C415D;
     --colour-primary-bg: #e5e1e5;
-    --primary-hover: #745775;
-    --primary-active: #382739;
     --primary-filter: invert(27%) sepia(27%) saturate(564%) hue-rotate(249deg) brightness(92%) contrast(93%);
 
     --colour-secondary: #f6a307;
@@ -73,6 +65,7 @@ body {
     background-color: var(--colour-primary-bg);
     -webkit-font-smoothing: antialiased;
     font-family: var(--font-amaranth);
+    font-weight: var(--font-normal);
     display: flex;
 }
 
